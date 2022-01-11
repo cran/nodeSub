@@ -73,17 +73,17 @@ if (beastier::is_beast2_installed()) {
 Having two posterior distributions of trees, we can compare them based on summary statistics.
 
 ```{r stats}
-if (beastier::is_beast2_installed()) {
-node_stats <- calc_sum_stats(node_posterior$all_trees,
-                             input_tree)
-ref_stats  <- calc_sum_stats(reference_posterior$all_trees,
-                            input_tree)
-
-node_stats$differences$method <- "node_sub"
-ref_stats$differences$method  <- "reference"
-
-results <- rbind(node_stats$differences,
-                 ref_stats$differences)
+if (beastier::is_beast2_installed() == TRUE) {
+  node_stats <- calc_sum_stats(node_posterior$all_trees,
+                               input_tree)
+  ref_stats  <- calc_sum_stats(reference_posterior$all_trees,
+                              input_tree)
+  
+  node_stats$differences$method <- "node_sub"
+  ref_stats$differences$method  <- "reference"
+  
+  results <- rbind(node_stats$differences,
+                   ref_stats$differences)
 }
 ```
 

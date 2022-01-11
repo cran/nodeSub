@@ -1,8 +1,8 @@
-629e5019decd545f50e8cf513d08a04b *DESCRIPTION
+95f9adecc57e58d3c80fe1bb8c72947f *DESCRIPTION
 d1b7c097da1547a15b3598164c1990ea *NAMESPACE
 06398238902e9a2c5ab79bfd15f86719 *R/RcppExports.R
 ed8def4ac5e6d82b8223dd637d81c61c *R/calc_rel_contr_node_time.R
-ac74eca2b65ddef80512096de68ebf9a *R/calc_summary_statistics.R
+c2fca8662071812be30aa3bd5ab97f7b *R/calc_summary_statistics.R
 01368b905fa3d2146180fbdd6985e452 *R/count_hidden.R
 92cd56bdc81097c65a0a0d7efb7c1fe5 *R/create_equal_alignment.R
 c6db7b3966929436293f986880c7a7a3 *R/create_equal_alignment_explicit.R
@@ -16,14 +16,14 @@ a0798e05204d95ee3e4a13b611ebf36f *R/sim_normal_explicit.R
 afc75eb28fe1f7c8a16efeab883704ba *R/sim_unlinked.R
 06ed8dc5ebee0a6f3ac950d819d87552 *R/sim_unlinked_explicit.R
 6a2779d18f5bf82df741c2277b49080d *R/util.R
-930055e8e2b9d35df252f1788446890c *README.md
+37d42a89e3ce492d235fe2fff360d158 *README.md
 ab61abe32df27dc95f7e38551e70bc16 *build/vignette.rds
 791fc1a57b38595153bc0466cec0a096 *inst/doc/substitution_models.R
 2bf1b79ca289175469b4c6b26774f6e2 *inst/doc/substitution_models.Rmd
-1e598a874226bfb9a14c91c559092bf4 *inst/doc/substitution_models.html
-aa347e0097d6f1f7f286e87b809dc99a *inst/doc/workflow.R
-d3bf79c9c310c98b1567accd4f9c00c7 *inst/doc/workflow.Rmd
-cc94c85e5a890b8be089e372706a6566 *inst/doc/workflow.html
+640800d1c9ad7b702a99d252a3764f0e *inst/doc/substitution_models.html
+9405b191aaf4eabe5408c36bf0d9f539 *inst/doc/workflow.R
+5b4d55718aeb3d068a25150fcdfa0acd *inst/doc/workflow.Rmd
+ea9706f387e7782df0ea0b71b7b4dd95 *inst/doc/workflow.html
 9446ac9fc736caea9fed352363ee5966 *man/calc_expected_hidden_nodes.Rd
 b7e1c4858fe732f30086c579f8c71d61 *man/calc_fraction.Rd
 a95870152b1a8515918a3e13362c5cd1 *man/calc_required_node_time.Rd
@@ -36,7 +36,7 @@ a628d35b287c71566d007fe43935f713 *man/create_equal_alignment_explicit.Rd
 5edc06237f13ead458af4a80079c7bc0 *man/estimate_marginal_models.Rd
 44f059eabdc355970242ad8f81e20f7e *man/get_p_matrix.Rd
 73b9107db33a1b147ff3580f738b29e1 *man/infer_phylogeny.Rd
-7a1fcc91c526979ab9ac3a2b5af71f81 *man/nodeSub-package.Rd
+9be74f6e7d1449dfa4f3c1f9fbe74d08 *man/nodeSub-package.Rd
 eff0878e0fc845480d700932b46f2765 *man/reduce_tree.Rd
 0d63fca87dacb27dcddbe9637b00f6ac *man/sim_linked.Rd
 5ef8866163be63af2d2dd0f530b00638 *man/sim_normal.Rd
@@ -51,7 +51,7 @@ e6e18fab06a45dbe469336f29b779e63 *tests/testthat.R
 69628f8819476092a64273f5cc34db94 *tests/testthat/test-calc_fraction.R
 f32af815b47047495dee685d5dcadbdc *tests/testthat/test-count_hidden.R
 edffdafcdd7f77463ec0395669d0af39 *tests/testthat/test-create_equal_alignment.R
-84196aff5c4e8e660dc19d2609fe1cd5 *tests/testthat/test-infer_phylogeny.R
+fe76b8a4401430dc01e4d60e45ea5cbf *tests/testthat/test-infer_phylogeny.R
 cd3acf090f0c7ec10146e2263d8c4752 *tests/testthat/test-marginal.R
 a5c74a42d72230841a2c2ce7d1dc3e8c *tests/testthat/test-relative_node_time.R
 c9ddbf0f38224d989e426b9d651d0692 *tests/testthat/test-sim_linked.R
@@ -60,6 +60,6 @@ c9ddbf0f38224d989e426b9d651d0692 *tests/testthat/test-sim_linked.R
 2272c2de332a2fc2f3da978425c12133 *tests/testthat/test-sim_unlinked.R
 0127d258ef1405fdc3425dba5e499986 *tests/testthat/test-sim_unlinked_explicit.R
 33ef38d45b7ea5ea62823e793cb2bf7b *tests/testthat/test-substitution.R
-7ff5c142db942d94dfb523318c63fc37 *tests/testthat/test-sum-stats.R
+c1b0ed6e03ac2357e8770867e2dbb8a3 *tests/testthat/test-sum-stats.R
 2bf1b79ca289175469b4c6b26774f6e2 *vignettes/substitution_models.Rmd
-d3bf79c9c310c98b1567accd4f9c00c7 *vignettes/workflow.Rmd
+5b4d55718aeb3d068a25150fcdfa0acd *vignettes/workflow.Rmd
