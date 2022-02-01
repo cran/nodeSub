@@ -1,7 +1,7 @@
 Package: nodeSub
 Type: Package
 Title: Simulate DNA Alignments Using Node Substitutions
-Version: 1.2.2
+Version: 1.2.3
 Author: Thijs Janzen
 Maintainer: Thijs Janzen <thijsjanzen@gmail.com>
 Description: Simulate DNA sequences for the node substitution model.
@@ -20,11 +20,11 @@ VignetteBuilder: knitr
 LinkingTo: Rcpp
 Depends: Rcpp
 Imports: RPANDA, nLTT, apTreeshape, phangorn, tibble, DDD, Rmpfr,
-        assertthat, pbapply, phylobase, stringr, geiger, ape, testit,
-        babette, beautier, beastier, mauricer, tracerer, rappdirs
+        assertthat, pbapply, phylobase, geiger, ape, babette, beautier,
+        beastier, mauricer, tracerer, rappdirs, testit, stringr
 Suggests: phytools, testthat, TreeSim, dplyr, knitr, rmarkdown,
         ggplot2, magrittr, tidyr
 NeedsCompilation: yes
-Packaged: 2022-01-10 13:58:24 UTC; janzen
+Packaged: 2022-01-31 10:06:57 UTC; janzen
 Repository: CRAN
-Date/Publication: 2022-01-11 10:22:42 UTC
+Date/Publication: 2022-02-01 07:50:10 UTC
