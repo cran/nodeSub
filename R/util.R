@@ -71,6 +71,7 @@ phyDat.DNA <- function(data) {  # nolint
 
 #' calculate p matrix
 #' @rawNamespace import(Rcpp)
+#' @rawNamespace import(ape)
 #' @rawNamespace useDynLib(nodeSub)
 #' @description calculates the p matrix
 #' @param branch_length branch length
@@ -226,10 +227,10 @@ calc_dist <- function(alignment_phydat,
                       root_sequence = NULL) {
 
   if (is.null(root_sequence)) {
-    root_sequences = alignment_phydat$root_seq
+    root_sequence = alignment_phydat$root_seq
   }
 
-  if (class(alignment_phydat) != "phyDat") {
+  if (!inherits(alignment_phydat, "phyDat")) {
     stop("input alignment has to be of type phyDat")
   }
 

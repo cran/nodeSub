@@ -33,7 +33,7 @@ if (beastier::is_beast2_installed()) {
 
   node_posterior <- infer_phylogeny(target_alignment$alignment,
                                     "node_posterior",
-                                    clock_prior = beautier::create_strict_clock_model(clock_rate_param = beautier::create_clock_rate_param(value = sub_rate)),
+                                    clock_prior = beautier::create_strict_clock_model(clock_rate_param =    beautier::create_clock_rate_param(value = sub_rate)),
                                     chain_length = 1e5,
                                     burnin = 0.1,
                                     working_dir = getwd(),
@@ -49,17 +49,17 @@ if (beastier::is_beast2_installed()) {
 }
 
 ## ----stats--------------------------------------------------------------------
-if (beastier::is_beast2_installed() == TRUE) {
-  node_stats <- calc_sum_stats(node_posterior$all_trees,
-                               input_tree)
-  ref_stats  <- calc_sum_stats(reference_posterior$all_trees,
-                              input_tree)
-  
-  node_stats$differences$method <- "node_sub"
-  ref_stats$differences$method  <- "reference"
-  
-  results <- rbind(node_stats$differences,
-                   ref_stats$differences)
+if (beastier::is_beast2_installed()) {
+node_stats <- calc_sum_stats(node_posterior$all_trees,
+                             input_tree)
+ref_stats  <- calc_sum_stats(reference_posterior$all_trees,
+                            input_tree)
+
+node_stats$differences$method <- "node_sub"
+ref_stats$differences$method  <- "reference"
+
+results <- rbind(node_stats$differences,
+                 ref_stats$differences)
 }
 
 ## ----plot results-------------------------------------------------------------

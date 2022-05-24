@@ -55,8 +55,8 @@ calc_sum_stats <- function(trees,
                            true_tree,
                            verbose = FALSE) {
 
-  if (class(trees) != "multiPhylo") {
-    if (class(trees) == "phylo") {
+  if (!inherits(trees, "multiPhylo")) {
+    if (inherits(trees, "phylo")) {
       trees <- list(trees)
       class(trees) <- "multiPhylo"
     } else {
@@ -83,25 +83,29 @@ calc_sum_stats <- function(trees,
                             nrow = length(trees),
                             ncol = length(sum_stats_true_tree) + 2)
 
-  # extra code checking for RPANDA
-  RPANDA_CAN_BE_LOADED <- requireNamespace("RPANDA")
-
   if (verbose) pb <- utils::txtProgressBar(max = length(trees), style = 3)
   for (i in seq_along(sum_stats_trees)) {
     # this for loop could be optimized later.
     to_add <- sum_stats_trees[[i]]
     local_diff <- abs(to_add - sum_stats_true_tree)
-    local_nltt <- nLTT::nltt_diff_exact(true_tree, trees[[i]])
+    local_nltt <- NA
+    local_jsd  <- NA
 
+    #if (requireNamespace("nLTT", quietly = TRUE)) {
+    #  local_nltt <- nLTT::nltt_diff_exact(true_tree, trees[[i]])
+    #} else {
+      warning("nLTT is currently not available, nLTT statistics not calculated")
+    #}
     # this is rather inefficient off course,
     # RPANDA can do all pairwise in one go.
-    if (RPANDA_CAN_BE_LOADED) {
-      local_jsd <- tryCatch(RPANDA::JSDtree(list(true_tree, trees[[i]]),
-                                          meth = "standard")[1, 2],
-                          error = NA)
-    } else {
-      local_jsd <- NA
-    }
+#    if (requireNamespace("RPANDA", quietly = TRUE)) {
+#      local_jsd <- tryCatch(RPANDA::JSDtree(list(true_tree, trees[[i]]),
+#                                          meth = "standard")[1, 2],
+#                          error = NA)
+#    } else {
+    warning("RPANDA is currently not available,
+              Laplacian statistics not calculated")
+
 
     local_diff <- c(local_diff, local_nltt, local_jsd)
 
