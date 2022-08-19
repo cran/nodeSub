@@ -15,17 +15,19 @@ input_tree <- TreeSim::sim.bd.taxa(n = 100,
                                    lambda = 1,
                                    mu = 0.1,
                                    complete = TRUE)[[1]]
-                                     
+
 target_alignment <- sim_unlinked(phy = input_tree,
                                  rate1 = sub_rate,
                                  rate2 = sub_rate,
                                  l = seq_length,
-                                 node_time = 0.3)   
+                                 node_time = 0.3)
 
 ## ----twin alignment-----------------------------------------------------------
-comp_alignment <- create_equal_alignment(input_tree = geiger::drop.extinct(input_tree),  # can only work on trees without extinct branches
-                                         sub_rate = sub_rate,
-                                         alignment_result = target_alignment)
+comp_alignment <- create_equal_alignment(
+                        input_tree = geiger::drop.extinct(input_tree),
+                        # can only work on trees without extinct branches
+                        sub_rate = sub_rate,
+                        alignment_result = target_alignment)
 
 ## ----infer_phylogeny----------------------------------------------------------
 
@@ -38,7 +40,7 @@ if (beastier::is_beast2_installed()) {
                                     burnin = 0.1,
                                     working_dir = getwd(),
                                     sub_rate = sub_rate)
-  
+
   reference_posterior <- infer_phylogeny(comp_alignment$alignment,
                                          "reference_posterior",
                                          burnin = 0.1,

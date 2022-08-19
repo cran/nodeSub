@@ -5,10 +5,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 plot_phyDat <- function(phyDat_alignment) {
   vx <- as.data.frame(phyDat_alignment)
-  
+
   num_entries <- nrow(vx) * ncol(vx)
   to_plot <- matrix(nrow = num_entries, ncol = 3)
-  
+
   cnt <- 1
   for (i in 1:nrow(vx)) {
     for (j in 1:ncol(vx)) {
@@ -23,7 +23,6 @@ plot_phyDat <- function(phyDat_alignment) {
   ggplot(to_plot, aes(x = x, y = y, fill = base)) +
     geom_tile()
 }
- 
 
 
 ## ----start--------------------------------------------------------------------
@@ -35,7 +34,7 @@ input_tree <- TreeSim::sim.bd.taxa(n = 10,
                                    lambda = 1,
                                    mu = 0.1,
                                    complete = TRUE)[[1]]
-                 
+
 normal_alignment <- sim_normal(input_tree,
                                l = seq_length,
                                rate = sub_rate)
