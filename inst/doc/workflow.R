@@ -5,6 +5,8 @@ library(tidyr)
 library(nodeSub)
 
 knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.width = 6)
+knitr::opts_chunk$set(fig.height = 6)
 
 ## ----create alignment---------------------------------------------------------
 seq_length <- 100
@@ -47,7 +49,7 @@ if (beastier::is_beast2_installed()) {
                                          clock_prior = beautier::create_strict_clock_model(clock_rate_param = beautier::create_clock_rate_param(value = comp_alignment$adjusted_rate)),
                                          chain_length = 1e5,
                                          working_dir = getwd,
-                                         sub_rate = sub_rate) 
+                                         sub_rate = sub_rate)
 }
 
 ## ----stats--------------------------------------------------------------------
@@ -68,8 +70,8 @@ results <- rbind(node_stats$differences,
 if (beastier::is_beast2_installed()) {
   results %>%
   tidyr::gather(key = "statistic", value = "val", -method) %>%
-  dplyr::filter(statistic != "num_tips") %>%  
-  ggplot(aes(x = method , y = val)) +
+  dplyr::filter(statistic != "num_tips") %>%
+  ggplot(aes(x = method, y = val)) +
     geom_boxplot() +
     facet_wrap(~statistic, scales = "free")
 }
